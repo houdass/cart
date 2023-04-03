@@ -1,0 +1,35 @@
+<div class="shopping-cart">
+  <!-- Title -->
+  <div class="title">
+    Shopping Bag
+  </div>
+  <h2 class="not-found" *ngIf="cartService.products?.length === 0">No items found, please check our list of products.</h2>
+  <div class="item" *ngFor="let product of cartService.products">
+    <div class="buttons">
+      <span class="delete-btn"></span>
+      <span class="like-btn"></span>
+    </div>
+
+    <div class="image">
+      <img [src]="product.image" [alt]="product.name">
+    </div>
+
+    <div class="description">
+      <span>{{ product.name }}</span>
+      <span>{{ product.brand }}</span>
+      <span>{{ product.gender }}</span>
+    </div>
+
+    <div class="quantity">
+      <button class="plus-btn" type="button" name="button">
+        <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+      </button>
+      <input type="text" name="name" value="1">
+      <button class="minus-btn" type="button" name="button">
+        <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+      </button>
+    </div>
+
+    <div class="total-price">{{ product.price }} CHF</div>
+  </div>
+</div>
